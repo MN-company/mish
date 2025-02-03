@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine's Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Collega il file CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Effetto cuori sullo sfondo -->
+  <div class="hearts"></div>
+
+  <!-- Schermata 1: Nome utente -->
+  <div class="container active" id="screen-1">
+    <img src="pass1.gif" alt="Intro" />
+    <h2>E tu chi saresti?</h2>
+    <input type="text" id="name" placeholder="Scrivi il soprannome che ti ho dato :)" />
+    <button class="nav-btn" onclick="saveName()">Avanti →</button>
+  </div>
+
+  <!-- Schermata 2: Saluto iniziale -->
+  <div class="container" id="screen-2">
+    <img src="pass6.gif" alt="Conferma" />
+    <h2>Ciao <span id="username"></span>!</h2>
+    <p>Dimostra di conoscermi ❤️</p>
+    <button class="nav-btn" onclick="next()">Inizia il quiz!</button>
+  </div>
+
+  <!-- Schermata 3: Domanda #1 -->
+  <div class="container" id="screen-3">
+    <img src="pass3.gif" alt="Domanda 1" />
+    <h2>Dove ci siamo baciati per la prima volta?</h2>
+    <div class="answers">
+      <button onclick="selectAnswer('q1','Piazza Brà',this)">Piazza Brà</button>
+      <button onclick="selectAnswer('q1','Piazza Fiera',this)">Piazza Fiera</button>
+      <button onclick="selectAnswer('q1','Sull’Adige',this)">Sull’Adige</button>
+      <button onclick="selectAnswer('q1','Alla finestra in hotel',this)">Alla finestra in hotel</button>
+    </div>
+    <div class="navigation">
+      <button class="nav-btn" onclick="prev()">← Indietro</button>
+      <button class="nav-btn" id="next3" disabled onclick="next()">Avanti →</button>
+    </div>
+  </div>
+
+  <!-- Schermata 4: Domanda #2 -->
+  <div class="container" id="screen-4">
+    <img src="pass4.gif" alt="Domanda 2" />
+    <h2>Qual è il mio appuntamento preferito?</h2>
+    <div class="answers">
+      <button onclick="selectAnswer('q2','Dubai',this)">Dubai</button>
+      <button onclick="selectAnswer('q2','Concerto',this)">Concerto</button>
+      <button onclick="selectAnswer('q2','Compleanno',this)">Compleanno</button>
+      <button onclick="selectAnswer('q2','Compleanno di Livio',this)">Compleanno di Livio</button>
+    </div>
+    <div class="navigation">
+      <button class="nav-btn" onclick="prev()">← Indietro</button>
+      <button class="nav-btn" id="next4" disabled onclick="next()">Avanti →</button>
+    </div>
+  </div>
+
+  <!-- Schermata 5: Domanda #3 -->
+  <div class="container" id="screen-5">
+    <img src="pass5.gif" alt="Domanda 3" />
+    <h2>Chi dei due è più produttivo?</h2>
+    <div class="answers">
+      <button onclick="selectAnswer('q3','IO',this)">IO</button>
+      <button onclick="selectAnswer('q3','Paolo',this)">Paolo</button>
+      <button onclick="selectAnswer('q3','Michelle',this)">Michelle</button>
+      <button onclick="selectAnswer('q3','Taddy :)',this)">Taddy :)</button>
+    </div>
+    <div class="navigation">
+      <button class="nav-btn" onclick="prev()">← Indietro</button>
+      <button class="nav-btn" id="next5" disabled onclick="checkAnswers()">Verifica →</button>
+    </div>
+  </div>
+
+  <!-- Schermata 6: Labirinto (Canvas) -->
+  <div class="container" id="screen-6">
+    <h2>Guidami al tuo cuore ❤️</h2>
+    <canvas id="maze" width="342" height="222"></canvas>
+    <div class="navigation">
+      <button class="nav-btn" onclick="prev()">← Indietro</button>
+      <button class="nav-btn" id="mazeBtn" style="display:none;" onclick="next()">Continua →</button>
+    </div>
+  </div>
+
+  <!-- Schermata 7: Will you be my Valentine? -->
+  <div class="container" id="screen-7">
+    <img src="pass7.gif" alt="Valentine finale" style="width: 200px;" />
+    <h2>Will You Be My Forever Valentine?</h2>
+
+    <!-- Contenitore per i pulsanti, con position relative -->
+    <div class="valentine-buttons">
+      <button id="yesBtn" class="nav-btn yes-default" onclick="next()">
+        YES, I WILL ❤️
+      </button>
+      <button id="noBtn" class="nav-btn no-default" onmouseover="moveNo()">
+        Maybe...
+      </button>
+    </div>
+  </div>
+
+  <!-- Schermata 8: Lettera finale -->
+  <div class="container" id="screen-8">
+    <img src="pass7.gif" alt="Lettera" style="width:120px; margin-bottom:20px;" />
+    <h2 style="color:#FF477E;">To My Special One</h2>
+    <div id="letter">
+      <p>Cara Valentine,</p>
+      <p>Ogni momento con te è magico... 🌟</p>
+      <p id="secret" style="display:none;">
+        Sei la mia luce, la mia gioia,<br>
+        il mio amore eterno. Ti amo 💖
+      </p>
+      <img src="wax-seal.png" class="wax-seal" />
+    </div>
+
+    <!-- Pulsante che sparisce dopo il click -->
+    <button id="revealBtn"
+            class="nav-btn"
+            style="margin-top:30px; background:#FF477E; color:white;"
+            onclick="reveal()">
+      Apri il cuore 🔓
+    </button>
+  </div>
+
+  <!-- Barra di progresso in basso -->
+  <div id="progress">
+    <div id="progress-fill"></div>
+  </div>
+
+  <!-- Collega il file JS -->
+  <script src="script.js"></script>
+</body>
+</html>
