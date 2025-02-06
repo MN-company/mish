@@ -1,250 +1,261 @@
 /* Variabili colori */
 :root {
-    --primary: #FFB3C6;
-    --secondary: #FF8FAB;
-    --accent: #FF477E;
-    --background: #FFF0F3;
-  }
-  
-  /* Base pagina */
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: var(--background);
-    margin: 0;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  /* Contenitori (schermate) */
-  .container {
-    display: none;
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 25px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-    animation: fadeIn 0.5s ease;
-    text-align: center;
-  }
-  .container.active {
-    display: block;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Titoli */
-  h2 {
-    font-family: 'Pacifico', cursive;
-    color: var(--accent);
-    margin: 15px 0;
-    font-size: 1.8em;
-  }
-  
-  /* Immagini animate (opzionale) */
-  img {
-    width: 160px;
-    margin: 15px 0;
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-10px); }
-  }
-  
-  /* Risposte */
-  .answers {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin: 25px 0;
-  }
-  .answers button {
-    padding: 15px;
-    border: 2px solid var(--primary);
-    border-radius: 15px;
-    background: white;
-    color: var(--accent);
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .answers button:hover {
-    background: var(--primary);
-    color: white;
-  }
-  .answers button.selected {
-    background: var(--primary);
-    color: white;
-    transform: scale(1.02);
-    border-color: var(--secondary);
-  }
-  .answers button.selected::after {
-    content: '✓';
-    margin-left: 10px;
-    font-size: 1.1em;
-  }
-  
-  /* Navigazione (Avanti/Indietro) */
-  .navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
-  }
-  .nav-btn {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    background: var(--primary);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .nav-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  .nav-btn:hover:not(:disabled) {
-    background: var(--secondary);
-    transform: translateY(-2px);
-  }
-  
-  /* Cuori che piovono */
-  .hearts {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-  }
-  .hearts span {
-    position: fixed;
-    font-size: 24px;
-    opacity: 0.7;
-    animation: fall 6s linear infinite;
-  }
-  @keyframes fall {
-    0%   { transform: translateY(-20vh) rotate(0deg); }
-    100% { transform: translateY(120vh) rotate(360deg); }
-  }
-  
-  /* Barra di progresso */
-  #progress {
-    width: 80%;
-    height: 8px;
-    background: #ffe6ee;
-    border-radius: 10px;
-    margin: 20px auto;
-  }
-  #progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    border-radius: 10px;
-    transition: width 0.5s ease;
-  }
-  
-  /* Input nome utente */
-  #name {
-    width: 80%;
-    padding: 15px;
-    border: 2px solid var(--primary);
-    border-radius: 30px;
-    font-size: 16px;
-    margin: 20px 0;
-    transition: all 0.3s ease;
-  }
-  #name:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 15px rgba(255,71,126,0.2);
-  }
-  
-  /* Canvas labirinto */
-  #maze {
-    border: 3px solid var(--primary);
-    border-radius: 20px;
-    margin: 20px auto;
-  }
-  
-  /* Schermata 7: Contenitore pulsanti “YES/NO” */
-  .valentine-buttons {
-    position: relative;  /* per posizionare i bottoni in modo absolute */
-    width: 300px;        /* puoi regolare a piacere */
-    height: 100px;
-    margin: 0 auto;
-  }
-  /* Pulsanti YES/NO di default */
-  .yes-default {
-    position: absolute;
-    left: 60px;
-    top: 30px;
-    background-color: white;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    font-size: 1.1em;
-  }
-  .no-default {
-    position: absolute;
-    left: 180px;
-    top: 30px;
-    background-color: var(--accent);
-    color: white;
-    border: 2px solid white;
-    font-size: 1.1em;
-  }
-  /* Classe che ingrandisce (RESTANDO GRANDE) */
-  .enlarge {
-    transform: scale(1.3) !important;
-  }
-  
-  /* Schermata 8: lettera finale */
-  #screen-8 {
-    background: #fffaf0;
-    position: relative;
-    padding: 40px;
-  }
-  #screen-8:before {
-    content: '';
-    position: absolute;
-    top: -10px; left: -10px; right: -10px; bottom: -10px;
-    background: repeating-linear-gradient(
-      0deg,
-      #ffe6e6 0px,
-      #ffe6e6 30px,
-      #ffcccc 30px,
-      #ffcccc 31px
-    );
-    z-index: -1;
-    border-radius: 30px;
-  }
-  /* Lettera interna */
-  #letter {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.2em;
-    line-height: 1.6;
-    position: relative;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin: 0 auto;
-    max-width: 400px;
-    text-align: left;
-  }
-  .wax-seal {
-    width: 60px;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    opacity: 0.8;
-  }
-  
+  --primary: #FFB3C6;
+  --secondary: #FF8FAB;
+  --accent: #FF477E;
+  --background: #FFF0F3;
+}
+
+/* Base pagina */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: var(--background);
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenitori (schermate) */
+.container {
+  display: none;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease;
+  text-align: center;
+}
+.container.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Titoli */
+h2 {
+  font-family: 'Pacifico', cursive;
+  color: var(--accent);
+  margin: 15px 0;
+  font-size: 1.8em;
+}
+
+/* Immagini animate */
+img {
+  width: 160px;
+  margin: 15px 0;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* Risposte */
+.answers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 25px 0;
+}
+.answers button {
+  padding: 15px;
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  background: white;
+  color: var(--accent);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.answers button:hover {
+  background: var(--primary);
+  color: white;
+}
+.answers button.selected {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.02);
+  border-color: var(--secondary);
+}
+.answers button.selected::after {
+  content: '✓';
+  margin-left: 10px;
+  font-size: 1.1em;
+}
+
+/* Navigazione (Avanti/Indietro) */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.nav-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: var(--primary);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.nav-btn:hover:not(:disabled) {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* Cuori che piovono */
+.hearts {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+.hearts span {
+  position: fixed;
+  font-size: 24px;
+  opacity: 0.7;
+  animation: fall 6s linear infinite;
+}
+@keyframes fall {
+  0%   { transform: translateY(-20vh) rotate(0deg); }
+  100% { transform: translateY(120vh) rotate(360deg); }
+}
+
+/* Barra di progresso */
+#progress {
+  width: 80%;
+  height: 8px;
+  background: #ffe6ee;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+#progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+/* Input nome utente */
+#name {
+  width: 80%;
+  padding: 15px;
+  border: 2px solid var(--primary);
+  border-radius: 30px;
+  font-size: 16px;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+#name:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(255,71,126,0.2);
+}
+
+/* Canvas labirinto */
+#maze {
+  border: 3px solid var(--primary);
+  border-radius: 20px;
+  margin: 20px auto;
+}
+
+/* Schermata 7: Contenitore pulsanti “YES/NO” */
+.valentine-buttons {
+  position: relative;  /* per posizionare i bottoni in modo absolute */
+  width: 300px;        /* puoi regolare a piacere */
+  height: 100px;
+  margin: 0 auto;
+}
+/* Pulsanti YES/NO di default */
+.yes-default {
+  position: absolute;
+  left: 60px;
+  top: 30px;
+  background-color: white;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  font-size: 1.1em;
+}
+.no-default {
+  position: absolute;
+  left: 180px;
+  top: 30px;
+  background-color: var(--accent);
+  color: white;
+  border: 2px solid white;
+  font-size: 1.1em;
+}
+/* Classe che ingrandisce (RESTANDO GRANDE) */
+.enlarge {
+  transform: scale(1.3) !important;
+}
+
+/* Schermata 8: lettera finale */
+#screen-8 {
+  background: #fffaf0;
+  position: relative;
+  padding: 40px;
+}
+#screen-8:before {
+  content: '';
+  position: absolute;
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
+  background: repeating-linear-gradient(
+    0deg,
+    #ffe6e6 0px,
+    #ffe6e6 30px,
+    #ffcccc 30px,
+    #ffcccc 31px
+  );
+  z-index: -1;
+  border-radius: 30px;
+}
+/* Lettera interna */
+#letter {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2em;
+  line-height: 1.6;
+  position: relative;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: left;
+
+  /* Importante per spezzare e gestire correttamente gli a capo */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.wax-seal {
+  width: 60px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0.8;
+}
+
+/* Se hai un elemento #secret all’interno del #letter o simile */
+#secret {
+  display: none;
+  white-space: pre-wrap;
+  margin-top: 15px;
+}
