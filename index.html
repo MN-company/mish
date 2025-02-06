@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Collega il file CSS -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
   <!-- Effetto cuori sullo sfondo -->
@@ -49,8 +50,8 @@
     <h2>Qual è il mio appuntamento preferito?</h2>
     <div class="answers">
       <button onclick="selectAnswer('q2','Dubai',this)">Dubai</button>
-      <button onclick="selectAnswer('q2','Concerto',this)">Concerto</button>
-      <button onclick="selectAnswer('q2','Compleanno',this)">Compleanno</button>
+      <button onclick="selectAnswer('q2','Concerto di Max Pezzali',this)">Concerto di Max Pezzali</button>
+      <button onclick="selectAnswer('q2','Al tuo compleanno',this)">Al tuo compleanno</button>
       <button onclick="selectAnswer('q2','Compleanno di Livio',this)">Compleanno di Livio</button>
     </div>
     <div class="navigation">
@@ -66,8 +67,8 @@
     <div class="answers">
       <button onclick="selectAnswer('q3','IO',this)">IO</button>
       <button onclick="selectAnswer('q3','Paolo',this)">Paolo</button>
-      <button onclick="selectAnswer('q3','Michelle',this)">Michelle</button>
-      <button onclick="selectAnswer('q3','Taddy :)',this)">Taddy :)</button>
+      <button onclick="selectAnswer('q3','Non tu',this)">Non tu</button>
+      <button onclick="selectAnswer('q3','Michele',this)">Michele</button>
     </div>
     <div class="navigation">
       <button class="nav-btn" onclick="prev()">← Indietro</button>
@@ -87,10 +88,9 @@
 
   <!-- Schermata 7: Will you be my Valentine? -->
   <div class="container" id="screen-7">
-    <img src="pass7.gif" alt="Valentine finale" style="width: 200px;" />
+    <img src="pass7.gif" alt="Valentine finale" class="final-gif" />
     <h2>Will You Be My Forever Valentine?</h2>
 
-    <!-- Contenitore per i pulsanti, con position relative -->
     <div class="valentine-buttons">
       <button id="yesBtn" class="nav-btn yes-default" onclick="next()">
         YES, I WILL ❤️
@@ -103,23 +103,20 @@
 
   <!-- Schermata 8: Lettera finale -->
   <div class="container" id="screen-8">
-    <img src="pass7.gif" alt="Lettera" style="width:120px; margin-bottom:20px;" />
-    <h2 style="color:#FF477E;">To My Special One</h2>
+    <img src="pass7.gif" alt="Lettera" class="letter-gif" />
+    <h2 class="heart-title">To My Special One</h2>
     <div id="letter">
-      <p>Cara Valentine,</p>
+      <p>Cara Michelle,</p>
       <p>Ogni momento con te è magico... 🌟</p>
-      <p id="secret" style="display:none;">
+      <!-- Testo nascosto inizialmente -->
+      <p id="secret">
         Sei la mia luce, la mia gioia,<br>
         il mio amore eterno. Ti amo 💖
       </p>
-      <img src="wax-seal.png" class="wax-seal" />
     </div>
 
     <!-- Pulsante che sparisce dopo il click -->
-    <button id="revealBtn"
-            class="nav-btn"
-            style="margin-top:30px; background:#FF477E; color:white;"
-            onclick="reveal()">
+    <button id="revealBtn" class="nav-btn reveal-btn" onclick="reveal()">
       Apri il cuore 🔓
     </button>
   </div>
