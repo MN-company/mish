@@ -9,7 +9,7 @@ const answers = {
   q3: null,
   correct: {
     q1: 'Piazza Brà',
-    q2: 'Concerto',
+    q2: 'Concerto di Max Pezzali',
     q3: 'Michele'
   }
 };
