@@ -148,7 +148,7 @@ const ctx = canvas.getContext('2d');
 
 // Carichiamo l'immagine del labirinto
 const labyrinthImg = new Image();
-labyrinthImg.src = 'maze.png';  // Assicurati che esista
+labyrinthImg.src = 'mazehart.gif';  // Assicurati che esista
 let hasStarted = false;
 let completed = false;
 
