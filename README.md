@@ -1,12 +1,6 @@
-# Questo è semplicemente un sito sviluppato per esigenza personale
-Lo ho voluto pubblicare solo per la necessità di avere un hosting gratuito ed immediato. Questo sito è senza scopo di lucro ovviamente. Il sito è libero, potete copiarlo, distribuirlo e migliorarlo quanto volete, sinceramente è una versione molto basica e potrebbe essere migliorato in molteplici modi. Vi invito a farlo.
-Ho utilizzato HTML, CSS e JS vecchio stile, senza integrare framework come React semplicemente per la mia inesperienza.
-
-## TD;DR
-E' un sito realizzato per me, fatene quello che volete.
-
-### Stato: NON finito
-Mancano ancora qualche file e aggiustamento nel codice, sarà tutto documentato nei commit.
+# This is simply a site developed out of personal need
+I only wanted to publish it because of the need for free and immediate hosting. This site is non-profit of course. The site is free, you can copy it, distribute it and improve it as much as you want, honestly it is a very basic version and could be improved in many ways. I invite you to do so.
+I have used old-style HTML, CSS and JS, without integrating frameworks such as React simply because of my inexperience.
 
 # 🤖 AI Written website
-Questo sito è stato sviluppato prima su Figma dal sottoscritto e sucessivamente è stato "tradotto" in codice HTML grazie ad una combinazione di AI (per avere un idea di come rispondevano). Ho usato ChatGPT-4o, O1 e Deepseek-r1. Infine ho rifinito il sito web personalmente.
+This site was designed entirely by myself on Figma. However, in order to experiment, I wanted to see if AI was able to replicate it, so I relied on GPT-4o for the description of the slides in Figma and then had O1 implement them. Finally, thanks to Deepseek-R1 I wrote the Javascript logic behind it.
