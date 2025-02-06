@@ -8,9 +8,9 @@ const answers = {
   q2: null,
   q3: null,
   correct: {
-    q1: 'Alla finestra in hotel',
-    q2: 'Compleanno di Livio',
-    q3: 'Taddy :)'
+    q1: 'Piazza Brà',
+    q2: 'Concerto di Max Pezzali',
+    q3: 'Michele'
   }
 };
 
@@ -148,7 +148,7 @@ const ctx = canvas.getContext('2d');
 
 // Carichiamo l'immagine del labirinto
 const labyrinthImg = new Image();
-labyrinthImg.src = 'mazehart.gif';  // Assicurati che esista
+labyrinthImg.src = 'maze.png';  // Assicurati che esista
 let hasStarted = false;
 let completed = false;
 
@@ -159,12 +159,6 @@ const endCP   = { x: 171, y: 210 };
 labyrinthImg.onload = function() {
   // Disegna immagine
   ctx.drawImage(labyrinthImg, 0, 0, canvas.width, canvas.height);
-  // (Opzionale) disegna i checkpoint per debug
-  ctx.fillStyle = '#FF477E';
-  ctx.beginPath();
-  ctx.arc(startCP.x, startCP.y, 8, 0, Math.PI*2);
-  ctx.arc(endCP.x, endCP.y, 8, 0, Math.PI*2);
-  ctx.fill();
 };
 
 let drawing = false;
@@ -222,7 +216,7 @@ function checkComplete(pos) {
   if (!hasStarted) {
     if (isNear(pos, startCP)) {
       hasStarted = true;
-      alert("Hai trovato il punto di partenza!");
+      alert("Hai trovato il punto di partenza! Ora trova la soluzione al labirinto");
     }
   } else {
     // Se ha iniziato, controlla la fine
