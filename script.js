@@ -248,8 +248,15 @@ function reveal() {
   secretEl.style.display = 'block';
 
   // 4) Testo che vuoi mostrare in stile "macchina da scrivere"
-  const text = `Sei la mia luce, la mia gioia,
-il mio amore eterno. Ti amo 💖`;
+  const text = `Cara Michelle,
+“L’amore non guarda con gli occhi, ma con l’anima.” 
+Così scriveva Shakespeare nelle sue opere e non c’è nulla di più vero. 
+Ciò che ammiro di te è che mi hai saputo guardare amandomi  per ciò che sono, pregi e difetti, non hai mollato alla prima difficoltà e mi sei sempre rimasta a fianco. Con te non mi sono mai sentito più a mio agio e rivivrei ogni momento senza cambiare nulla perché i nostri sbagli ci hanno permesso di arrivare qui.
+Ormai la parola casa non significa più quattro mura, ma ha il profumo della tua pelle e il calore delle tue braccia. Quelle stesse braccia in cui non vedo l’ora di rifugiarmi ogni volta che la distanza si fa raggiungibile e finalmente posso abbracciarti.
+E se l’amore è pazienza, promessa, attesa e desiderio… allora con te ho trovato il più vero che potessi immaginare.
+Sei il mio oggi e il mio domani, il mio posto sicuro e il mio viaggio più bello. E non importa quanto tempo dovrò aspettare tra un abbraccio e l’altro: ogni secondo senza di te non farà che rendere ancora più prezioso il momento in cui potrò perdermi di nuovo nei tuoi occhi.
+
+Il tuo Google :)  Ti amo 💖`;
 
   // 5) Svuota il contenuto e definisci la velocità (ms)
   secretEl.textContent = "";
